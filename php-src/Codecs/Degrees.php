@@ -39,7 +39,7 @@ class Degrees implements Interfaces\ICodecs
     {
         $subs = abs($number) - intval(abs($number));
         $part = $number % $upperLimit;
-        $part = $part > 0 ? $part + $subs : $part - $subs;
+        $part = 0 < $part ? $part + $subs : $part - $subs;
         $part = $part > $halfLimit ? ($part - $upperLimit) : (($part < -$halfLimit) ? ($part + $upperLimit) : $part);
 
         $min = abs($part - intval($part)) * 60;
@@ -91,7 +91,7 @@ class Degrees implements Interfaces\ICodecs
 
         $subs = abs($result) - intval(abs($result));
         $part = $result % $upperLimit;
-        $part = $part > 0 ? $part + $subs : $part - $subs;
+        $part = 0 < $part ? $part + $subs : $part - $subs;
         $part = $part > $halfLimit ? ($part - $upperLimit) : (($part < -$halfLimit) ? ($part + $upperLimit) : $part);
 
         return $part;
