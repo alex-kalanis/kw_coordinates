@@ -63,8 +63,8 @@ class DegreesTest extends CommonTestClass
         $transport = new Support\DegreesObject();
         $result = $lib->toLonLat($transport->setData($x, $y, $useAlt ? $z : 0.0));
 
-        $this->assertEquals($coordLon, $result->getLongitude());
-        $this->assertEquals($coordLat, $result->getLatitude());
+        $this->assertEquals(sprintf('%01.6f', $coordLon), sprintf('%01.6f', $result->getLongitude()));
+        $this->assertEquals(sprintf('%01.6f', $coordLat), sprintf('%01.6f', $result->getLatitude()));
         if ($useAlt) $this->assertEquals($coordAlt, $result->getAltitude());
     }
 
