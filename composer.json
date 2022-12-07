@@ -1,0 +1,31 @@
+{
+    "name": "alex-kalanis/kw_coordinates",
+    "description": "Transcode between coordinates - base libraries",
+    "keywords": [
+        "coordinates",
+        "coords",
+        "jtsk",
+        "sjtsk",
+        "wgs",
+        "wgs84"
+    ],
+    "license": "BSD-3-Clause",
+    "type": "library",
+    "require": {
+        "php": ">=7.3.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": ">=7.2"
+    },
+    "suggest": {
+    },
+    "autoload": {
+        "psr-4": {
+            "kalanis\\kw_coordinates\\": "php-src/"
+        }
+    },
+    "scripts": {
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

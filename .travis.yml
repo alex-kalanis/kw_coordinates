@@ -1,0 +1,20 @@
+# see https://docs.travis-ci.com/user/languages/php/ for more hints
+language: php
+
+php:
+  - 7.3
+  - 7.4
+  - 8.0
+#  - 8.1
+
+before_script:
+  - composer self-update
+  - composer install
+
+script:
+  - phpunit --configuration phpunit.xml --no-coverage
+  - PHP_CS_FIXER_IGNORE_ENV=1 vendor/bin/php-cs-fixer fix --format=txt --verbose --diff --allow-risky=yes --config=.php-cs-fixer.dist.php
+  - vendor/bin/phpstan analyse -c phpstan.`php -r "echo implode('.', array_slice(explode('.', PHP_VERSION), 0, 2));"`.neon
+
+notifications:
+  email: "me@kalanys.com"
