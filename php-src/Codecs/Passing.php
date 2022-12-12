@@ -29,9 +29,9 @@ class Passing implements Interfaces\ICodecs
     public function fromLonLat(Interfaces\INumbers $position): Interfaces\IFormatted
     {
         return (clone $this->out)->setData(
-            is_null($position->getLongitude()) ? null : strval($position->getLongitude()),
-            is_null($position->getLatitude()) ? null : strval($position->getLatitude()),
-            is_null($position->getAltitude()) ? null : strval($position->getAltitude()),
+            $position->getLongitude(),
+            $position->getLatitude(),
+            $position->getAltitude(),
         );
     }
 

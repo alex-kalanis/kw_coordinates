@@ -10,7 +10,7 @@ namespace kalanis\kw_coordinates\Interfaces;
  */
 interface INumbers
 {
-    public function setData(float $longitude = 0.0, float $latitude = 0.0, float $altitude = 0.0): self;
+    public function setData(?float $longitude = 0.0, ?float $latitude = 0.0, ?float $altitude = 0.0): self;
 
     public function getLongitude(): float;
 
