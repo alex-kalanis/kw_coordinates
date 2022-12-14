@@ -26,7 +26,7 @@ class Degrees implements Interfaces\ICodecs
         $this->out = $output ?: new Support\DegreesObject();
     }
 
-    public function fromLonLat(Interfaces\INumbers $position): Interfaces\IFormatted
+    public function fromLonLat(Interfaces\INumbers $position, array $params): Interfaces\IFormatted
     {
         return (clone $this->out)->setData(
             $this->positiveNegative($this->toDegrees($position->getLongitude(), 360, 180), 'W', 'E'),
@@ -53,7 +53,7 @@ class Degrees implements Interfaces\ICodecs
         return (('-' == $number[0]) ? substr($number, 1) . $forNegative : $number . $forPositive);
     }
 
-    public function toLonLat(Interfaces\IFormatted $source): Interfaces\INumbers
+    public function toLonLat(Interfaces\IFormatted $source, array $params): Interfaces\INumbers
     {
         return (clone $this->pos)->setData(
             $this->fromDegrees(strval($source->getLongitude()),360, 180, 'W', 'E'),

@@ -39,7 +39,7 @@ class Sjtsk1 implements Interfaces\ICodecs
         $this->out = $output ?: new Support\JtskObject();
     }
 
-    public function fromLonLat(Interfaces\INumbers $position): Interfaces\IFormatted
+    public function fromLonLat(Interfaces\INumbers $position, array $params): Interfaces\IFormatted
     {
         $d2r = pi() / 180;
         $a = 6378137.0;
@@ -115,9 +115,12 @@ class Sjtsk1 implements Interfaces\ICodecs
         $CY = $rho * cos($eps);
 
         $obj = clone $this->out;
+
+        $mul = isset($params['czech']) && boolval($params['czech']) ? 1 : -1;
+
         return $obj->setData(
-            $CX,
-            $CY,
+            $mul * $CX,
+            $mul * $CY,
             $H
         );
     }
@@ -127,9 +130,11 @@ class Sjtsk1 implements Interfaces\ICodecs
         return $x * $x;
     }
 
-    public function toLonLat(Interfaces\IFormatted $source): Interfaces\INumbers
+    public function toLonLat(Interfaces\IFormatted $source, array $params): Interfaces\INumbers
     {
-        $sjtskLatLong = $this->toSJTSKLatLong(floatval(strval($source->getLatitude())), floatval(strval($source->getLongitude())));
+        $mul = isset($params['czech']) && boolval($params['czech']) ? 1 : -1;
+
+        $sjtskLatLong = $this->toSJTSKLatLong($mul * floatval(strval($source->getLatitude())), $mul * floatval(strval($source->getLongitude())));
         return $this->toWSG84LatLong($sjtskLatLong[0], $sjtskLatLong[1]);
     }
 

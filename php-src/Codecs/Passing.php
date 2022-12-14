@@ -26,7 +26,7 @@ class Passing implements Interfaces\ICodecs
         $this->out = $output ?: new Support\DegreesObject();
     }
 
-    public function fromLonLat(Interfaces\INumbers $position): Interfaces\IFormatted
+    public function fromLonLat(Interfaces\INumbers $position, array $params): Interfaces\IFormatted
     {
         return (clone $this->out)->setData(
             $position->getLongitude(),
@@ -35,7 +35,7 @@ class Passing implements Interfaces\ICodecs
         );
     }
 
-    public function toLonLat(Interfaces\IFormatted $source): Interfaces\INumbers
+    public function toLonLat(Interfaces\IFormatted $source, array $params): Interfaces\INumbers
     {
         return (clone $this->pos)->setData(
             is_null($source->getLongitude()) ? null : floatval(strval($source->getLongitude())),
