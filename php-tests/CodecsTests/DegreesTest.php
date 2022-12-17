@@ -26,7 +26,7 @@ class DegreesTest extends CommonTestClass
     {
         $lib = new Codecs\Degrees();
         $transport = new Support\Position();
-        $result = $lib->fromLonLat($transport->setData($coordLon, $coordLat, $useAlt ? $coordAlt : 0.0));
+        $result = $lib->fromLonLat($transport->setData($coordLon, $coordLat, $useAlt ? $coordAlt : 0.0), []);
 
         $this->assertEquals($x, $result->getLongitude());
         $this->assertEquals($y, $result->getLatitude());
@@ -61,7 +61,7 @@ class DegreesTest extends CommonTestClass
     {
         $lib = new Codecs\Degrees();
         $transport = new Support\DegreesObject();
-        $result = $lib->toLonLat($transport->setData($x, $y, $useAlt ? $z : 0.0));
+        $result = $lib->toLonLat($transport->setData($x, $y, $useAlt ? $z : 0.0), []);
 
         $this->assertEquals(sprintf('%01.6f', $coordLon), sprintf('%01.6f', $result->getLongitude()));
         $this->assertEquals(sprintf('%01.6f', $coordLat), sprintf('%01.6f', $result->getLatitude()));
@@ -89,6 +89,6 @@ class DegreesTest extends CommonTestClass
         $lib = new Codecs\Degrees();
         $transport = new Support\DegreesObject();
         $this->expectException(CoordinatesException::class);
-        $lib->toLonLat($transport->setData('not-a-numbers', 'not-any-number'));
+        $lib->toLonLat($transport->setData('not-a-numbers', 'not-any-number'), []);
     }
 }

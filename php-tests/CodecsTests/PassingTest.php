@@ -26,7 +26,7 @@ class PassingTest extends CommonTestClass
     {
         $lib = new Codecs\Passing();
         $transport = new Support\Position();
-        $result = $lib->fromLonLat($transport->setData($coordLon, $coordLat, $useAlt ? $coordAlt : 0.0));
+        $result = $lib->fromLonLat($transport->setData($coordLon, $coordLat, $useAlt ? $coordAlt : 0.0), []);
 
         $this->assertEquals(sprintf('%01.6f', $x), sprintf('%01.6f', $result->getLongitude()));
         $this->assertEquals(sprintf('%01.6f', $y), sprintf('%01.6f', $result->getLatitude()));
@@ -48,7 +48,7 @@ class PassingTest extends CommonTestClass
     {
         $lib = new Codecs\Passing();
         $transport = new Support\DegreesObject();
-        $result = $lib->toLonLat($transport->setData($x, $y, $useAlt ? $z : 0.0));
+        $result = $lib->toLonLat($transport->setData($x, $y, $useAlt ? $z : 0.0), []);
 
         $this->assertEquals(sprintf('%01.6f', $coordLon), sprintf('%01.6f', $result->getLongitude()));
         $this->assertEquals(sprintf('%01.6f', $coordLat), sprintf('%01.6f', $result->getLatitude()));
