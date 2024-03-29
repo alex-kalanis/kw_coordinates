@@ -1,10 +1,10 @@
 kw_coordinates
 ==============
 
-[![Build Status](https://travis-ci.org/alex-kalanis/kw_coordinates.svg?branch=master)](https://travis-ci.org/alex-kalanis/kw_coordinates)
+![Build Status](https://github.com/alex-kalanis/kw_coordinates/actions/workflows/code_checks.yml/badge.svg)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/alex-kalanis/kw_coordinates/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/alex-kalanis/kw_coordinates/?branch=master)
 [![Latest Stable Version](https://poser.pugx.org/alex-kalanis/kw_coordinates/v/stable.svg?v=1)](https://packagist.org/packages/alex-kalanis/kw_coordinates)
-[![Minimum PHP Version](https://img.shields.io/badge/php-%3E%3D%207.3-8892BF.svg)](https://php.net/)
+[![Minimum PHP Version](https://img.shields.io/badge/php-%3E%3D%207.4-8892BF.svg)](https://php.net/)
 [![Downloads](https://img.shields.io/packagist/dt/alex-kalanis/kw_coordinates.svg?v1)](https://packagist.org/packages/alex-kalanis/kw_coordinates)
 [![License](https://poser.pugx.org/alex-kalanis/kw_coordinates/license.svg?v=1)](https://packagist.org/packages/alex-kalanis/kw_coordinates)
 [![Code Coverage](https://scrutinizer-ci.com/g/alex-kalanis/kw_coordinates/badges/coverage.png?b=master&v=1)](https://scrutinizer-ci.com/g/alex-kalanis/kw_coordinates/?branch=master)
@@ -13,12 +13,8 @@ Work with coordinates, have some basic stuff to expand to local or remote servic
 
 ## PHP Installation
 
-```
-{
-    "require": {
-        "alex-kalanis/kw_coordinates": "1.0"
-    }
-}
+```bash
+composer.phar require alex-kalanis/kw_coordinates
 ```
 
 (Refer to [Composer Documentation](https://github.com/composer/composer/blob/master/doc/00-intro.md#introduction) if you are not

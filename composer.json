@@ -12,13 +12,14 @@
     "license": "BSD-3-Clause",
     "type": "library",
     "require": {
-        "php": ">=7.3.0"
+        "php": ">=7.4.0"
     },
     "require-dev": {
+        "shipmonk/composer-dependency-analyser": "^1.4",
         "phpstan/phpstan": "^1.0",
         "phpstan/phpstan-phpunit": "^1.0",
         "friendsofphp/php-cs-fixer": "^3.0",
-        "phpunit/phpunit": ">=7.2"
+        "phpunit/phpunit": ">=7.2 <=9"
     },
     "suggest": {
     },

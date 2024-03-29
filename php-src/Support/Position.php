@@ -14,11 +14,11 @@ use kalanis\kw_coordinates\Interfaces\INumbers;
 class Position implements INumbers
 {
     /** @var float X  +-180° */
-    protected $longitude = 0.0;
+    protected float $longitude = 0.0;
     /** @var float Y +-90° */
-    protected $latitude = 0.0;
+    protected float $latitude = 0.0;
     /** @var float Z +-10000m */
-    protected $altitude = 0.0;
+    protected float $altitude = 0.0;
 
     public function setData(?float $longitude = 0.0, ?float $latitude = 0.0, ?float $altitude = 0.0): INumbers
     {

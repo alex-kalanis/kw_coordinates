@@ -15,10 +15,8 @@ use kalanis\kw_coordinates\Support;
  */
 class Passing implements Interfaces\ICodecs
 {
-    /** @var Interfaces\INumbers */
-    protected $pos = null;
-    /** @var Interfaces\IFormatted */
-    protected $out = null;
+    protected Interfaces\INumbers $pos;
+    protected Interfaces\IFormatted $out;
 
     public function __construct(?Interfaces\INumbers $position = null, ?Interfaces\IFormatted $output = null)
     {

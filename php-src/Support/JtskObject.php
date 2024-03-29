@@ -14,11 +14,11 @@ use kalanis\kw_coordinates\Interfaces\IFormatted;
 class JtskObject implements IFormatted
 {
     /** @var float */
-    protected $x = 0.0;
+    protected float $x = 0.0;
     /** @var float */
-    protected $y = 0.0;
+    protected float $y = 0.0;
     /** @var float */
-    protected $z = 0.0;
+    protected float $z = 0.0;
 
     public function setData($x = '0', $y = '0', $z = '0'): IFormatted
     {

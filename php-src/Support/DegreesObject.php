@@ -14,11 +14,11 @@ use kalanis\kw_coordinates\Interfaces\IFormatted;
 class DegreesObject implements IFormatted
 {
     /** @var string X  +-180° */
-    protected $longitude = '0';
+    protected string $longitude = '0';
     /** @var string Y +-90° */
-    protected $latitude = '0';
+    protected string $latitude = '0';
     /** @var string Z +-10000m */
-    protected $altitude = '0';
+    protected string $altitude = '0';
 
     public function setData($longitude = '0', $latitude = '0', $altitude = '0'): IFormatted
     {

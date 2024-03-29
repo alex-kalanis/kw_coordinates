@@ -28,10 +28,8 @@ class Sjtsk1 implements Interfaces\ICodecs
     const dY_SHIFT = 76;
     const dZ_SHIFT = 480;
 
-    /** @var Interfaces\INumbers */
-    protected $pos = null;
-    /** @var Interfaces\IFormatted */
-    protected $out = null;
+    protected Interfaces\INumbers $pos;
+    protected Interfaces\IFormatted $out;
 
     public function __construct(?Interfaces\INumbers $position = null, ?Interfaces\IFormatted $output = null)
     {
